@@ -6,8 +6,11 @@ import {
     TOGGLE_SIDE_BAR,
     LOAD_MOVIE,
     LOAD_MOVIES,
-    SET_YEARS_IN_FILTER,
+    SET_VALUE_IN_FILTER,
+    PUT_VIEWED_MOVIE,
 } from "../actions";
+import {LOCAL_STORAGE_MOVIE_KEY} from "../../constants/localStorage";
+import {saveDataToLocalStorage, getDataFromLocalStorage} from "../../helpers/moviesHelper";
 
 const initialState = {
     movies: {
@@ -33,10 +36,15 @@ const initialState = {
     filters: {
         fromDate: 0,
         toDate: 0,
-    }
+        ratingFrom: 0,
+        ratingTo: 0,
+    },
+    viewedMovies: [],
 };
 
-export const moviesReducer = (state = initialState, action) => {
+const stateFromLocalStorage = getDataFromLocalStorage(LOCAL_STORAGE_MOVIE_KEY);
+
+export const moviesReducer = (state = stateFromLocalStorage || initialState, action) => {
     switch (action.type) {
         case PUT_FOUND_MOVIES:
             const {movies, load} = action.payload;
@@ -51,26 +59,26 @@ export const moviesReducer = (state = initialState, action) => {
                 results,
             };
 
-            return {
+            return saveDataToLocalStorage(LOCAL_STORAGE_MOVIE_KEY, {
                 ...state,
                 movies: newMovies,
-            };
+            });
 
         case PUT_GENRES:
             const genres = action.payload;
 
-            return {
+            return saveDataToLocalStorage(LOCAL_STORAGE_MOVIE_KEY, {
                 ...state,
                 genres,
-            };
+            });
 
         case PUT_SELECTED_GENRES:
             const genresSelected = action.payload;
 
-            return {
+            return saveDataToLocalStorage(LOCAL_STORAGE_MOVIE_KEY, {
                 ...state,
                 genresSelected,
-            };
+            });
 
         case SET_SEARCH_QUERY:
             const searchQuery = action.payload;
@@ -79,44 +87,59 @@ export const moviesReducer = (state = initialState, action) => {
                 searchQuery,
             };
 
-            return {
+            return saveDataToLocalStorage(LOCAL_STORAGE_MOVIE_KEY, {
                 ...state,
                 userPreferences,
-            };
+            });
 
         case TOGGLE_SIDE_BAR:
             const {open, movie} = action.payload;
 
-            return {
+            return saveDataToLocalStorage(LOCAL_STORAGE_MOVIE_KEY, {
                 ...state,
                 sideBar: {
                     open,
                     movie,
                 }
-            };
+            });
 
         case LOAD_MOVIE:
-            return {
+            return saveDataToLocalStorage(LOCAL_STORAGE_MOVIE_KEY, {
                 ...state,
                 loadMovie: action.payload,
-            };
+            });
 
         case LOAD_MOVIES:
-            return {
+            return saveDataToLocalStorage(LOCAL_STORAGE_MOVIE_KEY, {
                 ...state,
                 loadMovies: action.payload,
-            };
+            });
 
-        case SET_YEARS_IN_FILTER:
+        case SET_VALUE_IN_FILTER:
             const {nameFilter, filterDate} = action.payload;
 
-            return {
+            return saveDataToLocalStorage(LOCAL_STORAGE_MOVIE_KEY, {
                 ...state,
                 filters: {
                     ...state.filters,
                     [nameFilter]: filterDate,
                 }
-            };
+            });
+
+        case PUT_VIEWED_MOVIE:
+            const viewedMovies = [...state.viewedMovies];
+            const movieId = action.payload;
+
+            if (viewedMovies.includes(movieId)) {
+                viewedMovies.splice(viewedMovies.indexOf(movieId), 1);
+            } else {
+                viewedMovies.push(movieId);
+            }
+
+            return saveDataToLocalStorage(LOCAL_STORAGE_MOVIE_KEY, {
+                ...state,
+                viewedMovies,
+            });
 
         default:
             return state;

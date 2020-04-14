@@ -3,6 +3,7 @@ import {apiKey, apiMoviesUrl, language} from "../API";
 import {requestStatus} from "../constants/requestStatus";
 import {putFoundMovies, putGenres, toggleSideBar, loadMovie, loadMovies} from "../store/actionCreators/movies";
 import {store} from "../store/store";
+import {getAppRef} from "../helpers/moviesHelper";
 
 export const apiMovie = {
     getMoviesBySearchQuery(searchQuery, page, load, resolve, reject) {
@@ -16,6 +17,12 @@ export const apiMovie = {
 
                     if (status === requestStatus.OK && data?.results?.length) {
                         store.dispatch(putFoundMovies(data, searchQuery, load));
+                        const appRef = getAppRef();
+
+                        if (window.pageYOffset === (appRef?.current?.scrollHeight - window.innerHeight)) {
+                            apiMovie.getMoviesBySearchQuery(searchQuery, page + 1, true);
+                        }
+
                         typeof resolve === "function" && resolve();
                     }
                 })

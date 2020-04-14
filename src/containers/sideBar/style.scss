@@ -1,3 +1,5 @@
+@import "./src/scss/mixins";
+
 .movies-sidebar {
   position: fixed;
   top: 0;
@@ -6,12 +8,13 @@
   height: 100vh;
   background: #ccccccad;
   transition: width 0.3s ease-out;
+  overflow: auto;
+  @include scrollBar;
 
   &__open {
     width: 30%;
     display: flex;
     justify-content: center;
-    overflow: auto;
   }
 
   &__content {

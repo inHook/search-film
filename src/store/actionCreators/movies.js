@@ -6,7 +6,8 @@ import {
     TOGGLE_SIDE_BAR,
     LOAD_MOVIE,
     LOAD_MOVIES,
-    SET_YEARS_IN_FILTER,
+    SET_VALUE_IN_FILTER,
+    PUT_VIEWED_MOVIE,
 } from "../actions";
 
 export const putFoundMovies = (movies, searchQuery, load) => ({
@@ -51,10 +52,15 @@ export const loadMovies = (boolean) => ({
     payload: boolean,
 });
 
-export const setYearsInFilter = (nameFilter, filterDate) => ({
-    type: SET_YEARS_IN_FILTER,
+export const setValueInFilter = (nameFilter, filterDate) => ({
+    type: SET_VALUE_IN_FILTER,
     payload: {
         nameFilter,
         filterDate,
     }
+});
+
+export const putViewedMovie = (movieId) => ({
+    type: PUT_VIEWED_MOVIE,
+    payload: movieId,
 });

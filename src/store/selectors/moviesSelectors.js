@@ -9,3 +9,4 @@ export const getSideBarOpen = state => state?.sideBar?.open || false;
 export const getLoadMovie = state => state?.loadMovie || false;
 export const getLoadMovies = state => state?.loadMovies || false;
 export const getFilters = state => state?.filters || {};
+export const getViewedMovies = state => state?.viewedMovies || [];

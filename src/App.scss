@@ -1,3 +1,10 @@
+@import "./src/scss/mixins";
+
+body {
+  overflow: auto;
+  @include scrollBar;
+}
+
 .App {
   text-align: center;
 }

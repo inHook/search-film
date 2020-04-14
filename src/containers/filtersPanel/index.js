@@ -9,10 +9,11 @@ import {
     putGenres,
     putSelectedGenres,
     setSearchQuery,
-    setYearsInFilter,
+    setValueInFilter,
 } from "../../store/actionCreators/movies";
-import {getGenres, getGenresSelected, getSearchQuery, getSideBarOpen} from "../../store/selectors/moviesSelectors";
+import {getGenres, getGenresSelected, getSearchQuery, getFilters, getSideBarOpen} from "../../store/selectors/moviesSelectors";
 import {apiMovie} from "../../backendServices/movie";
+import {appPages} from "../../constants/pages";
 
 import "./style.scss";
 
@@ -27,12 +28,12 @@ class FilterPanelRender extends React.PureComponent {
 
     handleChange = e => {
         const {name, value} = e.target;
-        const {setSearchQuery, setYearsInFilter} = this.props;
+        const {setSearchQuery, setValueInFilter} = this.props;
 
         if (name === "searchQuery") {
             setSearchQuery(value);
-        } else if (name === "fromDate" || name === "toDate") {
-            setYearsInFilter(name, Number(value));
+        } else {
+            setValueInFilter(name, Number(value));
         }
     };
 
@@ -58,8 +59,11 @@ class FilterPanelRender extends React.PureComponent {
                 apiMovie.getMoviesBySearchQuery(searchQuery, 1, false, resolve, reject)
             })
                 .then(() => {
-                    history.push("/movies-list");
-                });
+                    history.push(appPages.movieList);
+                })
+                .catch(error => {
+                    console.error(error);
+                })
         }
     };
 
@@ -83,14 +87,15 @@ class FilterPanelRender extends React.PureComponent {
     };
 
     render() {
-        const {searchQuery, genreIsOpen} = this.state;
-        const {genres, fixed, genresSelected, openSideBar} = this.props;
+        const {genreIsOpen} = this.state;
+        const {genres, fixed, genresSelected, searchQuery, filters, location, openSideBar} = this.props;
+        const {fromDate, toDate, ratingFrom, ratingTo} = filters;
 
         return (
             <div className={classNames(
                 "filter-panel__container",
                 {"filter-panel__container-fixed": fixed,
-                 "movies-sidebar__opened": openSideBar,
+                 "movies-sidebar__opened": location.pathname === appPages.movieList && openSideBar,
                 })}
                 >
                 <div className="filter-panel">
@@ -98,7 +103,7 @@ class FilterPanelRender extends React.PureComponent {
                     <form className="filter-panel__form">
                         <div className="filter-panel__form-element">
                             <div className="filter-panel__label">
-                                Введите фильм для поиска:
+                                Название фильма:
                             </div>
 
                             <input
@@ -163,6 +168,7 @@ class FilterPanelRender extends React.PureComponent {
                             </div>
 
                             <input
+                                value={fromDate}
                                 name="fromDate"
                                 type="number"
                                 className="filter-panel__input"
@@ -173,12 +179,41 @@ class FilterPanelRender extends React.PureComponent {
                             />
 
                             <input
+                                value={toDate}
                                 name="toDate"
                                 type="number"
                                 className="filter-panel__input"
                                 placeholder="До"
                                 min="1900"
                                 max="2100"
+                                onChange={this.handleChange}
+                            />
+                        </div>
+
+                        <div className="filter-panel__form-element">
+                            <div className="filter-panel__label">
+                                Рейтинг фильма:
+                            </div>
+
+                            <input
+                                value={ratingFrom || ""}
+                                name="ratingFrom"
+                                type="number"
+                                className="filter-panel__input"
+                                placeholder="От"
+                                min="0"
+                                max="10"
+                                onChange={this.handleChange}
+                            />
+
+                            <input
+                                value={ratingTo || ""}
+                                name="ratingTo"
+                                type="number"
+                                className="filter-panel__input"
+                                placeholder="До"
+                                min="0"
+                                max="10"
                                 onChange={this.handleChange}
                             />
                         </div>
@@ -195,6 +230,7 @@ const mapStateToProps = state => ({
     genres: getGenres(state),
     genresSelected: getGenresSelected(state),
     searchQuery: getSearchQuery(state),
+    filters: getFilters(state),
     openSideBar: getSideBarOpen(state),
 });
 
@@ -203,7 +239,7 @@ const mapDispatchToProps = {
     putGenres,
     putSelectedGenres,
     setSearchQuery,
-    setYearsInFilter,
+    setValueInFilter,
 };
 
 export const FilterPanel = withRouter(connect(mapStateToProps, mapDispatchToProps)(FilterPanelRender));
