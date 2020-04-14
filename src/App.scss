@@ -2,9 +2,21 @@
   text-align: center;
 }
 
+* {
+  margin:0;
+  padding:0;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+#root {
+  background: linear-gradient(to right, #EECFBA, #C5DDE8);
+  /*background: radial-gradient(40% 50%, #FAECD5, #CAE4D8);*/
+  height: auto;
+  font-family: "Comic Sans MS";
 }
 
 @media (prefers-reduced-motion: no-preference) {

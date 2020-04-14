@@ -1,0 +1,45 @@
+.movies-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100vh;
+  background: #ccccccad;
+  transition: width 0.3s ease-out;
+
+  &__open {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    overflow: auto;
+  }
+
+  &__content {
+    width: 75%;
+
+    div {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    left: 14px;
+    font-size: 30px;
+    top: 5px;
+    cursor: pointer;
+  }
+
+  &__poster {
+    margin-top: 25px;
+
+    &-element {
+      max-width: 100%;
+    }
+  }
+
+  &__genres {
+    margin-bottom: 30px;
+  }
+
+}

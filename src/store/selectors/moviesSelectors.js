@@ -1,0 +1,11 @@
+export const getGenres = state => state?.genres || [];
+export const getMovies = state => state?.movies || {};
+export const getGenresSelected = state => state?.genresSelected || [];
+export const getSearchQuery = state => state?.userPreferences?.searchQuery || "";
+export const getPage = state => state?.movies?.page || 1;
+export const getTotalPages = state => state?.movies?.total_pages || 0;
+export const getSideBar = state => state?.sideBar || {};
+export const getSideBarOpen = state => state?.sideBar?.open || false;
+export const getLoadMovie = state => state?.loadMovie || false;
+export const getLoadMovies = state => state?.loadMovies || false;
+export const getFilters = state => state?.filters || {};

@@ -1,0 +1,8 @@
+export const PUT_FOUND_MOVIES = "PUT_FOUND_MOVIES";
+export const PUT_GENRES = "PUT_GENRES";
+export const PUT_SELECTED_GENRES = "PUT_SELECTED_GENRES";
+export const SET_SEARCH_QUERY = "SET_SEARCH_QUERY";
+export const TOGGLE_SIDE_BAR = "TOGGLE_SIDE_BAR";
+export const LOAD_MOVIE = "LOAD_MOVIE";
+export const LOAD_MOVIES = "LOAD_MOVIES";
+export const SET_YEARS_IN_FILTER = "SET_YEARS_IN_FILTER";
