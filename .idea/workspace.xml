@@ -2,30 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78f6b2ed-ec3a-4aaf-a478-ac7bde2319e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/constants/pages.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/helpers/moviesHelper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scss/mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backendServices/movie.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/backendServices/movie.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/movie/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/movie/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/movie/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/movie/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/filtersPanel/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/filtersPanel/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/filtersPanel/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/filtersPanel/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/movieList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/movieList/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/movieList/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/localStorage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/containers/sideBar/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/containers/sideBar/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/mainPage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/mainPage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/mainPage/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/mainPage/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/moviePage/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moviePage/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/moviePage/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/moviePage/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actionCreators/movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actionCreators/movies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/moviesReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/moviesReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/selectors/moviesSelectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/selectors/moviesSelectors.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +103,7 @@
       <workItem from="1586775187200" duration="5684000" />
       <workItem from="1586784157717" duration="21460000" />
       <workItem from="1586824537917" duration="314000" />
-      <workItem from="1586864235590" duration="32193000" />
+      <workItem from="1586864235590" duration="32621000" />
     </task>
     <servers />
   </component>
@@ -145,10 +124,10 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="92" y="92" width="1496" height="826" maximized="true" key="DiffContextDialog" timestamp="1586824491754">
+    <state x="92" y="92" width="1496" height="826" maximized="true" key="DiffContextDialog" timestamp="1586898225383">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="92" y="92" width="1496" height="826" maximized="true" key="DiffContextDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1586824491754" />
+    <state x="92" y="92" width="1496" height="826" maximized="true" key="DiffContextDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1586898225383" />
     <state x="155" y="127" width="1331" height="729" key="find.popup" timestamp="1586894818781">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
