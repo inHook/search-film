@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {FilterPanelConnected} from "../../containers/filtersPanel";
+import {FilterPanelConnected} from "../../components/filtersPanel";
 
 import "./style.scss";
 

@@ -3,9 +3,9 @@ import {debounce} from "debounce";
 import {connect} from "react-redux";
 import classNames from "classnames";
 
-import {FilterPanelConnected} from "../../containers/filtersPanel";
+import {FilterPanelConnected} from "../../components/filtersPanel";
 import {MoviesListConnected} from "../../containers/movieList";
-import {SideBarConnected} from "../../containers/sideBar";
+import {SideBarConnected} from "../../components/sideBar";
 import {getSearchQuery, getPage, getTotalPages, getSideBarOpen, getLoadMovies} from "../../store/selectors/moviesSelectors";
 import {apiMovie} from "../../backendServices/movie";
 import {Loader} from "../../components/ui/loader";

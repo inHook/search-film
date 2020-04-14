@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {withRouter} from "react-router";
 import classNames from 'classnames/bind';
 
-import {Button} from "../../components/ui/button";
+import {Button} from "../ui/button";
 import {
     putFoundMovies,
     putGenres,

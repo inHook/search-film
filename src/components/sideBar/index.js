@@ -5,7 +5,7 @@ import classNames from "classnames";
 import {apiMoviesUrl} from "../../API";
 import {getGenres, getSideBar, getLoadMovie} from "../../store/selectors/moviesSelectors";
 import {toggleSideBar} from "../../store/actionCreators/movies";
-import {Loader} from "../../components/ui/loader";
+import {Loader} from "../ui/loader";
 
 import "./style.scss";
 
