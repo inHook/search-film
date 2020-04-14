@@ -3,7 +3,7 @@ import {debounce} from "debounce";
 import {connect} from "react-redux";
 import classNames from "classnames";
 
-import {FilterPanel} from "../../containers/filtersPanel";
+import {FilterPanelConnected} from "../../containers/filtersPanel";
 import {MoviesListConnected} from "../../containers/movieList";
 import {SideBarConnected} from "../../containers/sideBar";
 import {getSearchQuery, getPage, getTotalPages, getSideBarOpen, getLoadMovies} from "../../store/selectors/moviesSelectors";
@@ -38,7 +38,7 @@ class MoviesPage extends React.PureComponent {
                     "movies-page__inner",
                     {"movies-sidebar__opened": openSideBar},
                 )}>
-                    <FilterPanel fixed />
+                    <FilterPanelConnected fixed />
                     <MoviesListConnected />
                 </div>
 

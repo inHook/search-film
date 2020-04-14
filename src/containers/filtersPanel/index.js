@@ -17,7 +17,7 @@ import {appPages} from "../../constants/pages";
 
 import "./style.scss";
 
-class FilterPanelRender extends React.PureComponent {
+class FilterPanel extends React.PureComponent {
     state = {
         genreIsOpen: false,
     };
@@ -242,4 +242,4 @@ const mapDispatchToProps = {
     setValueInFilter,
 };
 
-export const FilterPanel = withRouter(connect(mapStateToProps, mapDispatchToProps)(FilterPanelRender));
+export const FilterPanelConnected = withRouter(connect(mapStateToProps, mapDispatchToProps)(FilterPanel));
