@@ -1,8 +1,8 @@
-export const includesGenreInArray = (genre_ids = [], genresSelected = []) => {
+export const includesGenreInArray = (genreIds = [], genresSelected = []) => {
     if (!genresSelected.length) return true;
 
-    for (let i = 0; i < genre_ids.length; i++) {
-        if (genresSelected.includes(genre_ids[i])) {
+    for (let i = 0; i < genreIds.length; i++) {
+        if (genresSelected.includes(genreIds[i])) {
             return true;
         }
     }
